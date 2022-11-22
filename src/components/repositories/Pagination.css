@@ -1,0 +1,49 @@
+.page-item {
+  display: inline-block;
+  padding-left: 0;
+}
+
+.page-item-selected {
+  background-color: khaki;
+}
+
+.page-link {
+  position: relative;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #2c689c;
+  border: 1px solid #ddd;
+  transition: transform 0.2s;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.page-link:hover {
+  background-color: #218838;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* page arrows*/
+.arrow {
+  border: solid #2c689c;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transition: transform 0.2s;
+}
+
+.arrow-right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.arrow-right:hover {
+  transform: scale(2) rotate(-45deg);
+  -webkit-transform: scale(2) rotate(-45deg);
+}
+
+.arrow-left {
+  transform: scale(2) rotate(135deg);
+  -webkit-transform: scale(2) rotate(135deg);
+}

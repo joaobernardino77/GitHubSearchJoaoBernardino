@@ -1,0 +1,12 @@
+.main-repository {
+  text-align: center;
+  font-size: min(1.5vw, 25px);
+  height: 10vw;
+}
+
+.gradient-list {
+  display: inline-block;
+  text-align: left;
+  padding: 1rem 1rem 1rem 4rem;
+  width: min(60%, 600px);
+}

@@ -1,0 +1,51 @@
+.home_main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.home_title {
+  color: green;
+  text-align: center;
+  font-size: min(80px, 8vw);
+  padding-bottom: 30px;
+}
+.home_subtitle {
+  text-align: center;
+  font-size: min(20px, 2vw);
+  padding-bottom: 10px;
+}
+
+.home_search {
+  position: relative;
+  height: min(5vw, 50px);
+}
+
+.home_search_input {
+  margin: 0px;
+  padding: 0px 0px 0px 5px;
+  width: 100%;
+  outline: none;
+  height: 100%;
+  border-radius: 5px;
+  font-size: min(17px, 1.7vw);
+}
+
+.home_search_button {
+  position: absolute;
+  top: 0;
+  border-radius: 4px;
+  z-index: 2;
+  border: none;
+  height: 100%;
+  cursor: pointer;
+  color: white;
+  background-color: #1e90ff;
+  width: 3.5vw;
+}
+
+.home_error_message {
+  color: red;
+}

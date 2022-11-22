@@ -1,0 +1,13 @@
+.card {
+  text-align: center;
+  color: grey;
+  font-size: min(1.8vw, 18px);
+}
+
+.usercard__avatar {
+  width: min(25vw, 375px);
+}
+
+.repo_title:hover {
+  cursor: pointer;
+}
