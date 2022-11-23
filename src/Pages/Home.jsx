@@ -30,6 +30,7 @@ const Home = () => {
       </div>
       <div className="home_search">
         <input
+          data-testid="home_search_input"
           className="home_search_input"
           value={user}
           type="text"

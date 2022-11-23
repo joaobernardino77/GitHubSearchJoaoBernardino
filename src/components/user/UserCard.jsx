@@ -3,14 +3,22 @@ import "./UserCard.css";
 const UserCard = ({ avatar, name, reposNumber, url }) => {
   return (
     <div className="card">
-      <img className="usercard__avatar" src={avatar} alt="" />
-      <p
+      <img
+        data-testid="usercard_avatar"
+        className="usercard_avatar"
+        src={avatar}
+        alt=""
+      />
+      <a
+        data-testid="usercard_name"
         className="repo_title"
-        onClick={() => window.open(url, "_blank", "noopener,noreferrer")}
+        href={url}
+        target="_blank"
+        rel="noreferrer"
       >
         @{name}
-      </p>
-      <p className="repo_number" onClick={() => console.log("tesstttteeee")}>
+      </a>
+      <p data-testid="usercard_number" className="repo_number">
         Number of Repositories : {reposNumber}
       </p>
     </div>

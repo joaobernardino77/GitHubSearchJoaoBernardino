@@ -3,19 +3,18 @@ import useFetchData from "../generics/FetchData";
 import Pagination from "./Pagination";
 import { numberOfReposPerPage } from "../../constants/constants";
 import Repository from "./Repository";
-
 import "./Repositories.css";
 import NotFound from "../generics/NotFound";
 import { Loading } from "../generics/Loading";
 
-const Repositories = ({ reposUrl, reposNumber }) => {
+const Repositories = ({ reposUrl, reposNumber, navigate }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const repoData = useFetchData(
+  const { loading, error, data } = useFetchData(
     reposUrl + `?page=${currentPage}&per_page=${numberOfReposPerPage}`,
     [reposUrl + `?page=${currentPage}&per_page=${numberOfReposPerPage}`]
   );
 
-  if (repoData.loading) {
+  if (loading) {
     return <Loading />;
   }
 
@@ -23,19 +22,19 @@ const Repositories = ({ reposUrl, reposNumber }) => {
     return;
   }
 
-  if (repoData.error)
+  if (error)
     return (
       <NotFound
         errorMessage="GitHub user was not found"
-        goBackPath={reposUrl}
+        redirectFunction={() => navigate("/")}
       />
     );
 
   return (
     <>
-      <div className="main-repository">
+      <div data-testid="repository-main" className="main-repository">
         <div className="gradient-list">
-          {repoData.data.map(({ id, name, description, svn_url }) => (
+          {data.map(({ id, name, description, svn_url }) => (
             <Repository
               key={id}
               name={name}

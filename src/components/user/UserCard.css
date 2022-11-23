@@ -4,8 +4,12 @@
   font-size: min(1.8vw, 18px);
 }
 
-.usercard__avatar {
-  width: min(25vw, 375px);
+.repo_title {
+  display: block;
+}
+
+.usercard_avatar {
+  width: min(16vw, 250px);
 }
 
 .repo_title:hover {

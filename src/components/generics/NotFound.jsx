@@ -1,14 +1,11 @@
-import { useNavigate } from "react-router-dom";
-
 import "./NotFound.css";
-const NotFound = ({ errorMessage, goBackPath = null }) => {
-  const navigate = useNavigate();
+const NotFound = ({ errorMessage, redirectFunction = null }) => {
   return (
     <div className="not_found_main">
       <div className="not_found_title">Error</div>
       <div className="not_found_subtitle">{errorMessage}</div>
-      {goBackPath && (
-        <button className="back-button" onClick={(e) => navigate(goBackPath)}>
+      {redirectFunction && (
+        <button className="not-found-button" onClick={() => redirectFunction()}>
           GO Back
         </button>
       )}

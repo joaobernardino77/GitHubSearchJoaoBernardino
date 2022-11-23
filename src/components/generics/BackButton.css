@@ -1,17 +1,17 @@
-.left {
+.back-button {
   position: absolute;
   margin-top: 1.05vw;
   margin-left: 1.6vw;
-  width: 1.4vw;
-  height: 1.4vw;
-  border-top: 0.5vw solid #333;
-  border-right: 0.5vw solid #333;
+  width: min(1.4vw, 30px);
+  height: min(1.4vw, 30px);
+  border-top: min(0.5vw, 5px) solid #333;
+  border-right: min(0.5vw, 5px) solid #333;
   -moz-transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
 
-.left:hover {
+.back-button:hover {
   scale: 1.3;
   cursor: pointer;
 }

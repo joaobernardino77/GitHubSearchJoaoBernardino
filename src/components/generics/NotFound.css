@@ -16,7 +16,7 @@
   padding-bottom: 10px;
 }
 
-.back-button {
+.not-found-button {
   padding: 1vw;
   background: #2196f3;
   color: #fff;
@@ -29,6 +29,6 @@
   font-size: min(1vw, 20px);
 }
 
-.back-button:hover {
+.not-found-button:hover {
   scale: 1.1;
 }

@@ -13,6 +13,8 @@ const Pagination = ({ currentPage, postsPerPage, totalPosts, paginate }) => {
       <ul className="pagination">
         {currentPage > 1 && (
           <li
+            data-testid="left-arrow"
+            role="button"
             onClick={() => paginate(--currentPage)}
             className="arrow arrow-left"
           />
@@ -20,17 +22,17 @@ const Pagination = ({ currentPage, postsPerPage, totalPosts, paginate }) => {
         {pageNumbers.map((number) => (
           <li
             key={number}
-            className={`page-item ${
+            className={`page-link ${
               currentPage === number ? "page-item-selected" : ""
             }`}
+            onClick={() => paginate(number)}
           >
-            <div onClick={() => paginate(number)} className="page-link">
-              {number}
-            </div>
+            {number}
           </li>
         ))}
         {currentPage < pageNumbers.length && (
           <li
+            data-testid="right-arrow"
             onClick={() => paginate(++currentPage)}
             className="arrow arrow-right"
           />

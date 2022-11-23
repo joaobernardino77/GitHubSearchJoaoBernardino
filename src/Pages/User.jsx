@@ -6,15 +6,22 @@ import { GITHUB_URI } from "../constants/constants";
 import Repositories from "../components/repositories/Repositories";
 import { Loading } from "../components/generics/Loading";
 import NotFound from "../components/generics/NotFound";
+import { useNavigate } from "react-router-dom";
 
 const User = () => {
   const { user } = useParams();
+
+  let navigate = useNavigate();
   const apiData = useFetchData(`${GITHUB_URI}/users/${user}`);
-  //Extract only what is required from the api
   const { avatar_url, login, html_url, repos_url, public_repos } = apiData.data;
 
   if (apiData.error)
-    return <NotFound errorMessage="GitHub user was not found" goBackPath="/" />;
+    return (
+      <NotFound
+        errorMessage="GitHub user was not found"
+        redirectFunction={() => navigate("/")}
+      />
+    );
 
   return (
     <>
@@ -22,7 +29,7 @@ const User = () => {
         <Loading />
       ) : (
         <>
-          <BackButton previousPage={"/"} />
+          <BackButton redirectFunction={() => navigate("/")} />
           <UserCard
             avatar={avatar_url}
             name={login}
@@ -30,7 +37,11 @@ const User = () => {
             url={html_url}
           />
           {public_repos > 0 && (
-            <Repositories reposUrl={repos_url} reposNumber={public_repos} />
+            <Repositories
+              reposUrl={repos_url}
+              reposNumber={public_repos}
+              navigate={navigate}
+            />
           )}
         </>
       )}
